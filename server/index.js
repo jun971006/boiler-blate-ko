@@ -100,7 +100,18 @@ app.get('/api/users/auth', auth, (req, res) => {
   }) 
 })
 
-
+// 로그아웃 API 추가
+// 로그아웃을 하게 되면 MongoDB에서 해당 유저의 토큰 값이 사라지게 된다.
+app.get('/api/users/logout', auth, (req, res)=>{
+  User.findOneAndUpdate({ _id:req.user._id},
+    { token: ""}
+    , (err, user) =>{
+      if(err) return res.json({success:false, err});
+      return res.status(200).send({
+        success:true
+      })
+    })
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
