@@ -1,6 +1,6 @@
 const express = require('express')  // express모듈 가져온다.
 const app = express()   // function이용하여 express app만든다.
-const port = 5000   // port생성
+
 const bodyParser = require('body-parser')
 const { auth } = require('./middleware/auth')
 const { User } = require("./models/User")
@@ -113,6 +113,10 @@ app.get('/api/users/logout', auth, (req, res)=>{
     })
 })
 
+app.get('/api/hello', (req, res) => {  res.send("Hello World! ~~~ ")})
+
+
+const port = 5000   // port생성
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
   // 프로그램 실행 npm run start
