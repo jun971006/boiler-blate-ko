@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {loginUser} from '../../../_action/user_action'
+import React, { useState } from 'react'
 
 export default function Loginpage(props) {
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export default function Loginpage(props) {
     const onPasswordHandler = (event) => {
         setPassword(event.currentTarget.value)
     }
+
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
@@ -38,8 +40,8 @@ export default function Loginpage(props) {
     return (
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100vh'
-        }}>
-            
+        }}
+      
             <form style={{display:'flex', flexDirection: 'column'}}
                 onSubmit={onSubmitHandler}
             >
