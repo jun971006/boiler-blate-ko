@@ -5,7 +5,7 @@ import {
 
 // email, password정보를 parameter를 통해 받는다.
 export function loginUser(dataTosubmit){
-    const request = axios.post("/api/user/login", dataTosubmit) // 실제 통신 부분
+    const request = axios.post("/api/users/login", dataTosubmit) // 실제 통신 부분
     // 서버에서 받은 부분을 request 변수에 저장한다.
             .then(response => response.data )
 

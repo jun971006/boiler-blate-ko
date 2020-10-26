@@ -30,8 +30,13 @@ export default function Loginpage(props) {
         }
 
         dispatch(loginUser(body))
-
-        
+            .then(response => {
+                if(response.payload.loginSuccess){
+                    props.history.push('/') // react에서 해당 url로 가게 하는 방법
+                } else{
+                    alert('error')
+                }
+            })
 
     }
 
