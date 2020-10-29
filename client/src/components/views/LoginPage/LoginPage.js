@@ -53,7 +53,7 @@ export default function Loginpage(props) {
                 <label>Password</label>
                 <input type="Password" value={Password} onChange={onPasswordHandler} />
                 <br/>
-                <button>
+                <button type="submit">
                     Login
                 </button>
 
