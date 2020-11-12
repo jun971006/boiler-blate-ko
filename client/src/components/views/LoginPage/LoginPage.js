@@ -4,7 +4,9 @@ import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {loginUser} from '../../../_action/user_action'
 
-export default function Loginpage(props) {
+import { withRouter } from 'react-router-dom'
+
+function Loginpage(props) {
     const dispatch = useDispatch();
 
     const [Email, setEmail] = useState("")
@@ -61,3 +63,6 @@ export default function Loginpage(props) {
         </div>
     )
 }
+
+
+export default withRouter(Loginpage)
