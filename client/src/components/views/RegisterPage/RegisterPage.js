@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
+import { withRouter } from 'react-router-dom';
 import {registerUser} from '../../../_action/user_action'
 
-export default function Registerpage(props) {
+function Registerpage(props) {
     const dispatch = useDispatch();
 
     const [Email, setEmail] = useState("")
@@ -79,3 +80,6 @@ export default function Registerpage(props) {
         </div>
     )
 }
+
+
+export default withRouter(Registerpage)

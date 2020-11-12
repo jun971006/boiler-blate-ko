@@ -1,5 +1,5 @@
 import {
-    LOGIN_USER, REGISTER_USER
+    LOGIN_USER, REGISTER_USER, AUTH_USER
 } from '../_action/types'
 
 export default function(state={}, action){
@@ -15,6 +15,13 @@ export default function(state={}, action){
             // login에 성공하게 되면 json형식으로
             // loginSuccess와 user_id값을 반환함.
             return {...state, register : action.payload}
+            break;
+
+        case AUTH_USER:
+            // action.payload에는 server딴의 index.js에서
+            // login에 성공하게 되면 json형식으로
+            // loginSuccess와 user_id값을 반환함.
+            return {...state, userData : action.payload}
             break;
 
         default:
